@@ -10,6 +10,7 @@
   --footer-contacts-color: rgba(255, 255, 255, 0.6);
   --button-active-bg-color: #188ce8;
   --border-color: #eeeeee;
+  --icon-color: #afb1b8;
 }
 /*        !RESET STYLES */
 
@@ -142,6 +143,7 @@ body {
 .contacts-list {
   display: flex;
   gap: 50px;
+  align-items: center;
   margin-left: auto;
 }
 
@@ -162,6 +164,22 @@ body {
   color: var(--accent);
 }
 
+.contact-mail .contact-icon,
+.contact-tel .contact-icon {
+  fill: currentColor;
+}
+
+.contact-mail:hover .contact-icon,
+.contact-mail:focus .contact-icon,
+.contact-tel:hover .contact-icon,
+.contact-tel:focus .contact-icon {
+  fill: var(--accent);
+}
+
+.contact-icon {
+  margin-right: 10px;
+}
+
 /*          !***MAIN***!  */
 
 /*        !Hero          */
@@ -171,6 +189,14 @@ body {
   padding: 200px 0;
   margin: 0 auto;
   background-color: #2f303a;
+  background-image: linear-gradient(
+      rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.4)
+    ),
+    url('../img/index-img/hero.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
 }
 
 .hero-wrap {
@@ -237,6 +263,18 @@ body {
   line-height: 1.71;
 }
 
+.feature-icon-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 270px;
+  height: 120px;
+  margin-bottom: 30px;
+
+  background-color: var(--secondary-bg-color);
+}
+
 /*        !Directions      */
 
 .direction {
@@ -267,6 +305,7 @@ body {
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 4px 4px;
+  padding-bottom: 30px;
 }
 
 .team-unit:not(:last-child) {
@@ -294,10 +333,66 @@ body {
   margin-bottom: 30px;
 }
 
+.social-list {
+  display: flex;
+  gap: 10px;
+  align-content: center;
+  justify-content: center;
+}
+.social-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+}
+.social-link .social-icon {
+  fill: var(--primary-text-color);
+}
+.social-link:hover .social-icon,
+.social-link:focus .social-icon {
+  fill: var(--primary-bg-color);
+}
+.social-link:hover,
+.social-link:focus {
+  background-color: var(--accent);
+}
+
+/*        !Clients */
+
+.clients-list {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+}
+.client-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--icon-color);
+  border-radius: 4px;
+  width: 170px;
+  height: 92px;
+}
+
+.client-link:hover,
+.client-link:focus {
+  border-color: var(--accent);
+}
+.client-icon {
+  fill: var(--icon-color);
+}
+.client-link:hover .client-icon,
+.client-link:focus .client-icon {
+  fill: var(--accent);
+}
+
 /*         !Footer        */
 
 .footer {
   margin: 0 auto;
+
   background-color: var(--footer-bg-color);
 }
 
@@ -322,8 +417,14 @@ body {
 
 .footer-wrap {
   display: flex;
+  align-items: baseline;
+  padding: 60px 0 60px 0;
+}
+
+.address-wrap {
+  display: flex;
   flex-direction: column;
-  padding: 60px 15px 60px 15px;
+  margin: 0;
 }
 
 .footer-logo {
@@ -339,6 +440,44 @@ body {
 .footer-mail {
   margin-bottom: 9px;
   padding: 0;
+}
+
+.studio-socials-wrap {
+  display: flex;
+  flex-direction: column;
+
+  margin-left: 70px;
+}
+
+.studio-socials-wrap .title {
+  color: var(--primary-bg-color);
+  font-weight: 700;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.studio-socials-list {
+  display: flex;
+  gap: 10px;
+}
+.studio-social-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.studio-social-link .studio-social-icon {
+  fill: var(--primary-bg-color);
+}
+
+.studio-social-link:hover,
+.social-link:focus {
+  background-color: var(--accent);
 }
 
 /***            ***Second page***             ***/
@@ -386,6 +525,14 @@ body {
 
 .projects-item {
   width: 370px;
+  cursor: pointer;
+}
+
+.projects-item:hover,
+.projects-item:focus {
+  border: 1px solid #eeeeee;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 .project-description {
